@@ -11,7 +11,7 @@ import SwiftUI
 struct ERCalculatorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RuneCalculatorView()
         }
     }
 }
