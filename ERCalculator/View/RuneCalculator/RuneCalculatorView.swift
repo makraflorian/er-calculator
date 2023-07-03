@@ -19,6 +19,7 @@ struct RuneCalculatorView: View {
             NumberField()
             ButtonPad()
         }
+        .padding(12.0)
         .background(.gray)
     }
     
@@ -44,9 +45,9 @@ struct RuneCalculatorView: View {
         }
         
         var body: some View {
-            VStack {
+            VStack(spacing: 12.0) {
                 ForEach(buttonTypes, id: \.self) { row in
-                    HStack {
+                    HStack(spacing: 12.0) {
                         ForEach(row, id: \.self) { buttonType in
                             CalculatorButton(buttonType: buttonType)
                         }
