@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RuneCalculatorView: View {
+    @EnvironmentObject var coordinator: Coordinator
+    @StateObject var viewModel: RuneCalculatorViewModel
     
     var body: some View {
         VStack {
@@ -58,8 +60,8 @@ struct RuneCalculatorView: View {
     }
 }
 
-struct RuneCalculatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        RuneCalculatorView()
-    }
-}
+//struct RuneCalculatorView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RuneCalculatorView()
+//    }
+//}

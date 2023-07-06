@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ERCalculatorApp: App {
+    @StateObject private var coordinator = Coordinator()
     var body: some Scene {
         WindowGroup {
-            RuneCalculatorView()
+//            LandingView(viewModel: LandingViewModel()).environmentObject(coordinator)
+            BubbleTabView()
         }
     }
 }
