@@ -135,8 +135,8 @@
 		D7FC72282A4EF62600A594D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D76022442A56ED240053DAFC /* BubbleTabBar */,
 				D7E414992A53006E004A5817 /* Coordinator.swift */,
+				D76022442A56ED240053DAFC /* BubbleTabBar */,
 				D7E4149B2A5300EC004A5817 /* Landing */,
 				D7FC722A2A4F085600A594D5 /* Components */,
 				D7E414942A52B6A4004A5817 /* Left */,

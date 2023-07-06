@@ -12,8 +12,7 @@ struct ERCalculatorApp: App {
     @StateObject private var coordinator = Coordinator()
     var body: some Scene {
         WindowGroup {
-//            LandingView(viewModel: LandingViewModel()).environmentObject(coordinator)
-            BubbleTabView()
+            BubbleTabView().environmentObject(coordinator)
         }
     }
 }

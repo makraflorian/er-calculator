@@ -18,43 +18,43 @@ import SwiftUI
 //}
 
 class Coordinator: ObservableObject {
-//    @Published var path = NavigationPath()
-//    @Published var selectedLandingTab: LandingView.Tab = .calculator
-    //@Published var selectedTab = BubbleTabView.Tab.moon.rawValue
+    //    @Published var path = NavigationPath()
+    //    @Published var selectedLandingTab: LandingView.Tab = .calculator
+    @Published var selectedTab = BubbleTabView.Tab.moon
     
-//    func push(_ page: Page) {
-//        path.append(page)
-//    }
-//
-//    func pop() {
-//        path.removeLast()
-//    }
-//
-//    func popToRoot() {
-//        path.removeLast(path.count)
-//    }
-//
-//    @ViewBuilder
-//    func build(page: Page) -> some View {
-//        switch page {
-//        case .boss:
-//            constructBoss()
-//        case .build:
-//            constructBuild()
-//        case .calculator:
-//            constructCalculator()
-//        case .frog:
-//            Frog()
-//        case .cat:
-//            Cat()
-//        }
-//    }
+    //    func push(_ page: Page) {
+    //        path.append(page)
+    //    }
+    //
+    //    func pop() {
+    //        path.removeLast()
+    //    }
+    //
+    //    func popToRoot() {
+    //        path.removeLast(path.count)
+    //    }
+    //
+    //    @ViewBuilder
+    //    func build(page: Page) -> some View {
+    //        switch page {
+    //        case .boss:
+    //            constructBoss()
+    //        case .build:
+    //            constructBuild()
+    //        case .calculator:
+    //            constructCalculator()
+    //        case .frog:
+    //            Frog()
+    //        case .cat:
+    //            Cat()
+    //        }
+    //    }
     
-//    func constructLanding() -> some View {
-//        let viewModel = LandingViewModel()
-//        let landingView = LandingView(viewModel: viewModel).environmentObject(self)
-//        return landingView
-//    }
+    //    func constructLanding() -> some View {
+    //        let viewModel = LandingViewModel()
+    //        let landingView = LandingView(viewModel: viewModel).environmentObject(self)
+    //        return landingView
+    //    }
     
     func constructTabView() -> some View {
         let tabView = BubbleTabView().environmentObject(self)

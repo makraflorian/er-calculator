@@ -9,86 +9,90 @@ import Foundation
 import SwiftUI
 
 struct BubbleTabView: View {
-    @State var selectedTab = "moon"
+    //    @State var selectedTab = "moon"
     @EnvironmentObject var coordinator: Coordinator
     //@StateObject var viewModel: LandingViewModel
     
     init() {
         UITabBar.appearance().isHidden = true
     }
-//    LOC
+    //    LOC
     @State var xAxis: CGFloat = 0
     @Namespace var animation
     
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-                TabView(selection: $selectedTab) {
+                TabView(selection: $coordinator.selectedTab) {
                     Cat()
                         .ignoresSafeArea(.all, edges: .all)
-                        .tag("heart")
+                        .tag(Tab.heart)
                     
                     Frog()
                         .ignoresSafeArea(.all, edges: .all)
-                        .tag("moon")
+                        .tag(Tab.moon)
                     
-                    RuneCalculatorView(viewModel: RuneCalculatorViewModel())
-//                        .ignoresSafeArea(.all, edges: .all)
-                        .tag("pawprint")
+                    // RuneCalculatorView(viewModel: RuneCalculatorViewModel())
+                    coordinator.constructCalculator()
+                    // .ignoresSafeArea(.all, edges: .all)
+                        .tag(Tab.pawprint)
                 }
                 //            CUSTOM
                 HStack(spacing: 0) {
-                    ForEach(tabs, id: \.self){image in
+                    ForEach(Tab.allCases, id: \.rawValue){image in
                         GeometryReader { reader in
                             Button(action: {
                                 withAnimation(.spring()){
-                                    selectedTab = image
+                                    coordinator.selectedTab = image
                                     xAxis = reader.frame(in: .global).midX
                                 }
                             }, label: {
-                                Image(systemName: image)
+                                Image(systemName: image.rawValue)
                                     .resizable()
                                     .renderingMode(.template)
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 50, height: 25)
-                                    .foregroundColor(selectedTab == image ? Color.red : Color.black)
-                                    .padding(.top, selectedTab != image ? 10 : 0)
-                                    .padding(selectedTab == image ? 15 : 0)
-                                    .background(Color.white.opacity(selectedTab == image ? 1 : 0)).clipShape(Circle())
+                                    .foregroundColor(coordinator.selectedTab == image ? Color.red : Color.black)
+                                    .padding(.top, coordinator.selectedTab != image ? 10 : 0)
+                                    .padding(coordinator.selectedTab == image ? 15 : 0)
+                                    .background(Color.white.opacity(coordinator.selectedTab == image ? 1 : 0)).clipShape(Circle())
                                     .matchedGeometryEffect(id: image, in: animation)
-                                    .offset(x: selectedTab == image ? (reader.frame(in: .global).minX - reader.frame(in: .global).midX) : 0, y: selectedTab == image ? -50 : 0)
-                        })
+                                    .offset(x: coordinator.selectedTab == image ? (reader.frame(in: .global).minX - reader.frame(in: .global).midX) : 0, y: coordinator.selectedTab == image ? -50 : 0)
+                            })
                             .onAppear(perform: {
-                                if image == tabs[1]{
+                                if image == Tab.moon{
                                     xAxis = reader.frame(in: .global).midX
                                 }
                             })
                         }
                         .frame(width: 40, height: 30)
-                        if image != tabs.last{Spacer(minLength: 0)}
+                        if image != Tab.pawprint{Spacer(minLength: 0)}
                     }
                 }
                 .padding(.horizontal, 50)
                 .padding(.vertical)
                 .padding(.bottom, geometry.safeAreaInsets.bottom)
                 .background(Color.white.clipShape(Curve(xAxis: xAxis)).cornerRadius(0))
-//                .padding(.horizontal)
+                // .padding(.horizontal)
             }
             .ignoresSafeArea(.all, edges: .bottom)
         }
     }
 }
 
-//extension BubbleTabView {
-//
-//    enum Tab: String, CaseIterable {
-//        case heart = "heart"
-//        case moon = "moon"
-//        case pawprint = "pawprint"
-//    }
-//
-//}
-var tabs = ["heart","moon","pawprint"]
+extension BubbleTabView {
+    
+    enum Tab: String, Identifiable, CaseIterable {
+        case heart
+        case moon
+        case pawprint
+        
+        var id: String {
+            self.rawValue
+        }
+    }
+    
+}
 
 
 //private struct BubbleTabView: View {
