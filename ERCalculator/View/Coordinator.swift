@@ -19,9 +19,8 @@ import SwiftUI
 
 class Coordinator: ObservableObject {
     //    @Published var path = NavigationPath()
-    //    @Published var selectedLandingTab: LandingView.Tab = .calculator
     @Published var selectedTab = BubbleTabView.Tab.moon
-    
+    // For later
     //    func push(_ page: Page) {
     //        path.append(page)
     //    }
@@ -50,12 +49,8 @@ class Coordinator: ObservableObject {
     //        }
     //    }
     
-    //    func constructLanding() -> some View {
-    //        let viewModel = LandingViewModel()
-    //        let landingView = LandingView(viewModel: viewModel).environmentObject(self)
-    //        return landingView
-    //    }
-    
+    // MARK: - CONSTRUCT VIEWS
+
     func constructTabView() -> some View {
         let tabView = BubbleTabView().environmentObject(self)
         return tabView

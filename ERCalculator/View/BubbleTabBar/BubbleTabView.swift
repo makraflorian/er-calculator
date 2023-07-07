@@ -107,7 +107,7 @@ extension BubbleTabView {
 //    }
 //}
 
-// Curve
+// MARK: - CURVE
 private struct Curve: Shape {
     
     var xAxis: CGFloat
@@ -142,7 +142,8 @@ private struct Curve: Shape {
 }
 
 struct BubbleTabView_Previews: PreviewProvider {
+    static var coordinator = Coordinator()
     static var previews: some View {
-        BubbleTabView()
+        BubbleTabView().environmentObject(coordinator)
     }
 }
