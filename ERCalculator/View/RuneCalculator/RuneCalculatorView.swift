@@ -32,7 +32,8 @@ struct RuneCalculatorView: View {
                 Text("Summon range").tag(1)
             }
             .pickerStyle(.wheel)
-            Text("The player's rune level was: 120")
+            Text("The player's rune level was: \(viewModel.resultText)")
+            Text("For current level: \(viewModel.currentText) above: \(viewModel.aboveText)")
             Spacer()
             NumberField(viewModel: viewModel)
             ButtonPad(viewModel: viewModel).padding(.bottom, 100)

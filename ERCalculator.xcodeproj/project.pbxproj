@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74AC5F32A5F0E84009C12D7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74AC5F22A5F0E84009C12D7 /* StringExtension.swift */; };
 		D76947122A55AC1D00533373 /* BubbleTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76947112A55AC1D00533373 /* BubbleTabView.swift */; };
 		D773B7732A4DC9A8007C0FF2 /* ERCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773B7722A4DC9A8007C0FF2 /* ERCalculatorApp.swift */; };
 		D773B7772A4DC9AA007C0FF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D773B7762A4DC9AA007C0FF2 /* Assets.xcassets */; };
 		D773B77A2A4DC9AA007C0FF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D773B7792A4DC9AA007C0FF2 /* Preview Assets.xcassets */; };
 		D79769E32A546CD700155751 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79769E22A546CD700155751 /* Cat.swift */; };
 		D79769E52A546CED00155751 /* Frog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79769E42A546CED00155751 /* Frog.swift */; };
-		D79E2E112A583D6C00520EA9 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E2E102A583D6C00520EA9 /* Calculator.swift */; };
+		D79E2E112A583D6C00520EA9 /* CalculatorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E2E102A583D6C00520EA9 /* CalculatorHelpers.swift */; };
 		D7E4148E2A52B628004A5817 /* RuneCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4148D2A52B628004A5817 /* RuneCalculatorViewModel.swift */; };
 		D7E414912A52B66D004A5817 /* MiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E414902A52B66D004A5817 /* MiddleView.swift */; };
 		D7E414932A52B67E004A5817 /* MiddleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E414922A52B67E004A5817 /* MiddleViewModel.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D74AC5F22A5F0E84009C12D7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D76947112A55AC1D00533373 /* BubbleTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabView.swift; sourceTree = "<group>"; };
 		D773B76F2A4DC9A8007C0FF2 /* ERCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ERCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D773B7722A4DC9A8007C0FF2 /* ERCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERCalculatorApp.swift; sourceTree = "<group>"; };
@@ -34,7 +36,7 @@
 		D773B7792A4DC9AA007C0FF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D79769E22A546CD700155751 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		D79769E42A546CED00155751 /* Frog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frog.swift; sourceTree = "<group>"; };
-		D79E2E102A583D6C00520EA9 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		D79E2E102A583D6C00520EA9 /* CalculatorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorHelpers.swift; sourceTree = "<group>"; };
 		D7E4148D2A52B628004A5817 /* RuneCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuneCalculatorViewModel.swift; sourceTree = "<group>"; };
 		D7E414902A52B66D004A5817 /* MiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleView.swift; sourceTree = "<group>"; };
 		D7E414922A52B67E004A5817 /* MiddleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleViewModel.swift; sourceTree = "<group>"; };
@@ -58,6 +60,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D74AC5F02A5F0DBC009C12D7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D773B7762A4DC9AA007C0FF2 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D74AC5F12A5F0E55009C12D7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D74AC5F22A5F0E84009C12D7 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D74AC5F52A5F10B6009C12D7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D79E2E102A583D6C00520EA9 /* CalculatorHelpers.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		D76022442A56ED240053DAFC /* BubbleTabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,10 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				D773B7722A4DC9A8007C0FF2 /* ERCalculatorApp.swift */,
-				D773B7762A4DC9AA007C0FF2 /* Assets.xcassets */,
-				D773B7782A4DC9AA007C0FF2 /* Preview Content */,
+				D74AC5F52A5F10B6009C12D7 /* Utils */,
+				D74AC5F12A5F0E55009C12D7 /* Extensions */,
 				D7FC72292A4EF63B00A594D5 /* Model */,
 				D7FC72282A4EF62600A594D5 /* View */,
+				D74AC5F02A5F0DBC009C12D7 /* Resources */,
+				D773B7782A4DC9AA007C0FF2 /* Preview Content */,
 			);
 			path = ERCalculator;
 			sourceTree = "<group>";
@@ -140,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				D7FC72262A4EF59900A594D5 /* CalculatorButtonType.swift */,
-				D79E2E102A583D6C00520EA9 /* Calculator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,9 +263,10 @@
 				D7E4148E2A52B628004A5817 /* RuneCalculatorViewModel.swift in Sources */,
 				D7E4149A2A53006E004A5817 /* Coordinator.swift in Sources */,
 				D7E414932A52B67E004A5817 /* MiddleViewModel.swift in Sources */,
+				D74AC5F32A5F0E84009C12D7 /* StringExtension.swift in Sources */,
 				D773B7732A4DC9A8007C0FF2 /* ERCalculatorApp.swift in Sources */,
 				D7E414912A52B66D004A5817 /* MiddleView.swift in Sources */,
-				D79E2E112A583D6C00520EA9 /* Calculator.swift in Sources */,
+				D79E2E112A583D6C00520EA9 /* CalculatorHelpers.swift in Sources */,
 				D7F3C51F2A56C45F008229F6 /* BubbleTabViewModel.swift in Sources */,
 				D79769E32A546CD700155751 /* Cat.swift in Sources */,
 				D7E414982A52B6C8004A5817 /* LeftView.swift in Sources */,
