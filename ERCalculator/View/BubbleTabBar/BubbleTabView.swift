@@ -9,14 +9,12 @@ import Foundation
 import SwiftUI
 
 struct BubbleTabView: View {
-    //    @State var selectedTab = "moon"
     @EnvironmentObject var coordinator: Coordinator
-    //@StateObject var viewModel: LandingViewModel
     
     init() {
         UITabBar.appearance().isHidden = true
     }
-    //    LOC
+
     @State var xAxis: CGFloat = 0
     @Namespace var animation
     
@@ -32,7 +30,6 @@ struct BubbleTabView: View {
                         .ignoresSafeArea(.all, edges: .all)
                         .tag(Tab.moon)
                     
-                    // RuneCalculatorView(viewModel: RuneCalculatorViewModel())
                     coordinator.constructCalculator()
                     // .ignoresSafeArea(.all, edges: .all)
                         .tag(Tab.pawprint)
@@ -91,21 +88,7 @@ extension BubbleTabView {
             self.rawValue
         }
     }
-    
 }
-
-
-//private struct BubbleTabView: View {
-//    var body: some View {
-//        Text("TODO")
-//            .padding()
-//            .foregroundColor(.white)
-//            .frame(maxWidth: .infinity, alignment: .trailing)
-//            .font(.system(size: 88, weight: .light))
-//            .lineLimit(1)
-//            .minimumScaleFactor(0.2)
-//    }
-//}
 
 // MARK: - CURVE
 private struct Curve: Shape {

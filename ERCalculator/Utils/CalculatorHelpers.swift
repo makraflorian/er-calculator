@@ -39,13 +39,13 @@ func cubicSolve(a: Double, b: Double, c: Double, d: Double, threshold: Double = 
 
 func runesForLevel(guess: Double) -> Double {
     
-    let guess_helper = floor(guess)
+    let guess_rounded = floor(guess)
     
-    let helper_cubic = (0.02 * pow(guess_helper, 3))
-    let helper_quadratic = (3.06 * pow(guess_helper, 2))
-    let helper_basic = (105.6 * guess_helper)
+    let helper_cubic = (0.02 * pow(guess_rounded, 3))
+    let helper_quadratic = (3.06 * pow(guess_rounded, 2))
+    let helper_basic = (105.6 * guess_rounded)
     
-    let helper = floor(helper_cubic + helper_quadratic + helper_basic - 895)
+    let runes = floor(helper_cubic + helper_quadratic + helper_basic - 895)
     
-    return helper
+    return runes
 }
