@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct LeftView: View {
+    @EnvironmentObject var coordinator: Coordinator
+    @StateObject var viewModel: LeftViewModel
+    
     var body: some View {
         Text("LEFT")
     }
 }
 
-struct LeftView_Previews: PreviewProvider {
-    static var previews: some View {
-        LeftView()
-    }
-}
+//struct LeftView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LeftView()
+//    }
+//}

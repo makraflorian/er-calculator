@@ -8,24 +8,48 @@
 import SwiftUI
 
 struct RuneCalculatorView: View {
+    //    @EnvironmentObject var coordinator: Coordinator
+    @StateObject var viewModel: RuneCalculatorViewModel
+    @State private var page = 0
     
     var body: some View {
         VStack {
-            Text("segmented control | Invasion | Summon range |")
+            Picker("Calculators", selection: $page) {
+                Text("Invasion").tag(0)
+                Text("Summon range").tag(1)
+            }
+            .pickerStyle(.segmented)
+            //            Text("segmented control | Invasion | Summon range |")
             Text("You are a: ===PICKER===")
+            Picker("Calculators", selection: $page) {
+                Text("Invasion").tag(0)
+                Text("Summon range").tag(1)
+            }
+            .pickerStyle(.inline)
             Text("The player was: ===PICKER===")
-            Text("The player's rune level was: 120")
+            Picker("Calculators", selection: $page) {
+                Text("Invasion").tag(0)
+                Text("Summon range").tag(1)
+            }
+            .pickerStyle(.wheel)
+            Text("The player's rune level was: \(viewModel.resultText)")
+            Text("For current level: \(viewModel.currentText) above: \(viewModel.aboveText)")
             Spacer()
-            NumberField()
-            ButtonPad()
+            NumberField(viewModel: viewModel)
+            ButtonPad(viewModel: viewModel).padding(.bottom, 100)
         }
         .padding(12.0)
         .background(.gray)
     }
     
+    // MARK: - COMPONENTS
+    
     private struct NumberField: View {
+        
+        @StateObject var viewModel: RuneCalculatorViewModel
+        
         var body: some View {
-            Text("TODO")
+            Text(viewModel.displayText)
                 .padding()
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .trailing)
@@ -37,19 +61,16 @@ struct RuneCalculatorView: View {
     
     private struct ButtonPad: View {
         
-        var buttonTypes: [[ButtonType]] {
-            [[.digit(.seven), .digit(.eight), .digit(.nine)],
-             [.digit(.four), .digit(.five), .digit(.six)],
-             [.digit(.one), .digit(.two), .digit(.three)],
-             [.digit(.zero), .delete]]
-        }
+        @StateObject var viewModel: RuneCalculatorViewModel
         
         var body: some View {
             VStack(spacing: 12.0) {
-                ForEach(buttonTypes, id: \.self) { row in
+                ForEach(viewModel.buttonTypes, id: \.self) { row in
                     HStack(spacing: 12.0) {
                         ForEach(row, id: \.self) { buttonType in
-                            CalculatorButton(buttonType: buttonType)
+                            CalculatorButton(action: {
+                                viewModel.performAction(for: buttonType)},
+                                             buttonType: buttonType)
                         }
                     }
                 }
@@ -60,6 +81,6 @@ struct RuneCalculatorView: View {
 
 struct RuneCalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        RuneCalculatorView()
+        RuneCalculatorView(viewModel: RuneCalculatorViewModel())
     }
 }
