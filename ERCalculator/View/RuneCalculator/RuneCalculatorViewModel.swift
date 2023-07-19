@@ -16,6 +16,11 @@ class RuneCalculatorViewModel: ObservableObject {
     @Published var resultText: String = "0"
     @Published var currentText: String = "0"
     @Published var aboveText: String = "0"
+    
+    @Published var selectedPlayer = PlayerType.invader
+    @Published var selectedEnemy = (PlayerType.friendly + PlayerType.enemy)[1]
+    @Published var selectionEnemyArray = PlayerType.friendly + PlayerType.enemy
+    
     private var newNumber: Decimal?
     private var result_dec: Decimal?
     
@@ -39,35 +44,26 @@ class RuneCalculatorViewModel: ObservableObject {
         //        calc()
     }
     
+    func changePlayer(){
+        if PlayerType.friendly.contains(selectedPlayer) {
+            selectionEnemyArray = PlayerType.enemy
+            selectedEnemy = PlayerType.enemy[0]
+        } else {
+            selectionEnemyArray = PlayerType.friendly + PlayerType.enemy
+        }
+    }
+    
     func calc() {
         
-        /// Get the last level up rune amount
-        let runes_got = NSDecimalNumber(decimal: number ?? 0.0).doubleValue
-        let runes = runes_got / 4.0 * 100.0
-        print("RUNES = \(runes)")
+        let multiplier = getPercent(player: selectedPlayer, enemy: selectedEnemy)
         
-        /// Get the rough level value based on the more precise DS3 formula
-        let guess = cubicSolve(a: 0.02, b: 3.05, c: 105.6, d: -895.0 - runes)
-        var result = guess
-        print("GUESS = \(guess)")
-        //        let res1 = cubicSolve(a: -0.02, b: -3.12, c: -111.78, d: -786.32 + runes) // ER formula
+        var result = getLevel(number: number ?? 0.0, multiplier: multiplier)
         
-        /// Calculate the required runes for the guessed level and corrects the result based on this checks
-        let helper_current = floor(runesForLevel(guess: guess) / 100.0 * 4.0)
-        let helper_above = floor(runesForLevel(guess: guess + 1.0) / 100.0 * 4.0)
-        print("CURRENT = \(helper_current)")
-        if helper_current > floor(runes_got) {
-            result = guess - 1.0
-        } else if helper_above <= floor(runes_got){
-            result = guess + 1.0
-        } else {
-            result = guess
-        }
-        //        let helper = ((((guess_helper-11)*0.02)+0.1) * (pow(guess_helper + 81), 2)) + 1 // ER formula
+        if result < 1.0 { result = 1.0 }
         
-        /// Calculate the helpers (under arnd above levels rune requirement)
-        let current_souls = (runesForLevel(guess: result) / 100.0) * 4.0
-        let above_souls = (runesForLevel(guess: (result + 1.0)) / 100.0) * 4.0
+        /// Calculate the helpers (under and above levels rune requirement)
+        let current_souls = runesForLevel(guess: result) * multiplier
+        let above_souls = runesForLevel(guess: (result + 1.0)) * multiplier
         
         /// Set the published variables
         currentText = getNumberString(forNumber: Decimal(floor(current_souls)), withCommas: true)

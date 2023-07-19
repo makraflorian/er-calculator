@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70A63B92A653D2C00D1E144 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A63B82A653D2C00D1E144 /* Constants.swift */; };
 		D74AC5F32A5F0E84009C12D7 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74AC5F22A5F0E84009C12D7 /* StringExtension.swift */; };
 		D76947122A55AC1D00533373 /* BubbleTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76947112A55AC1D00533373 /* BubbleTabView.swift */; };
 		D773B7732A4DC9A8007C0FF2 /* ERCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773B7722A4DC9A8007C0FF2 /* ERCalculatorApp.swift */; };
@@ -15,6 +16,7 @@
 		D79769E32A546CD700155751 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79769E22A546CD700155751 /* Cat.swift */; };
 		D79769E52A546CED00155751 /* Frog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79769E42A546CED00155751 /* Frog.swift */; };
 		D79E2E112A583D6C00520EA9 /* CalculatorHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79E2E102A583D6C00520EA9 /* CalculatorHelpers.swift */; };
+		D7A1D1FF2A60240600F03E73 /* Multiplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A1D1FE2A60240600F03E73 /* Multiplayer.swift */; };
 		D7E4148E2A52B628004A5817 /* RuneCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4148D2A52B628004A5817 /* RuneCalculatorViewModel.swift */; };
 		D7E414912A52B66D004A5817 /* MiddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E414902A52B66D004A5817 /* MiddleView.swift */; };
 		D7E414932A52B67E004A5817 /* MiddleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E414922A52B67E004A5817 /* MiddleViewModel.swift */; };
@@ -28,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D70A63B82A653D2C00D1E144 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D74AC5F22A5F0E84009C12D7 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D76947112A55AC1D00533373 /* BubbleTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabView.swift; sourceTree = "<group>"; };
 		D773B76F2A4DC9A8007C0FF2 /* ERCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ERCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,6 +40,7 @@
 		D79769E22A546CD700155751 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		D79769E42A546CED00155751 /* Frog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frog.swift; sourceTree = "<group>"; };
 		D79E2E102A583D6C00520EA9 /* CalculatorHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorHelpers.swift; sourceTree = "<group>"; };
+		D7A1D1FE2A60240600F03E73 /* Multiplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplayer.swift; sourceTree = "<group>"; };
 		D7E4148D2A52B628004A5817 /* RuneCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuneCalculatorViewModel.swift; sourceTree = "<group>"; };
 		D7E414902A52B66D004A5817 /* MiddleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleView.swift; sourceTree = "<group>"; };
 		D7E414922A52B67E004A5817 /* MiddleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiddleViewModel.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D79E2E102A583D6C00520EA9 /* CalculatorHelpers.swift */,
+				D70A63B82A653D2C00D1E144 /* Constants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				D7FC72262A4EF59900A594D5 /* CalculatorButtonType.swift */,
+				D7A1D1FE2A60240600F03E73 /* Multiplayer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				D74AC5F32A5F0E84009C12D7 /* StringExtension.swift in Sources */,
 				D773B7732A4DC9A8007C0FF2 /* ERCalculatorApp.swift in Sources */,
 				D7E414912A52B66D004A5817 /* MiddleView.swift in Sources */,
+				D7A1D1FF2A60240600F03E73 /* Multiplayer.swift in Sources */,
 				D79E2E112A583D6C00520EA9 /* CalculatorHelpers.swift in Sources */,
 				D7F3C51F2A56C45F008229F6 /* BubbleTabViewModel.swift in Sources */,
 				D79769E32A546CD700155751 /* Cat.swift in Sources */,
@@ -275,6 +282,7 @@
 				D7FC722C2A4F086B00A594D5 /* CalculatorButton.swift in Sources */,
 				D79769E52A546CED00155751 /* Frog.swift in Sources */,
 				D7FC72252A4EF24800A594D5 /* RuneCalculatorView.swift in Sources */,
+				D70A63B92A653D2C00D1E144 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

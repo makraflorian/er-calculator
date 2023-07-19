@@ -21,17 +21,26 @@ struct RuneCalculatorView: View {
             .pickerStyle(.segmented)
             //            Text("segmented control | Invasion | Summon range |")
             Text("You are a: ===PICKER===")
-            Picker("Calculators", selection: $page) {
-                Text("Invasion").tag(0)
-                Text("Summon range").tag(1)
+            Picker("Calculators", selection: $viewModel.selectedPlayer) {
+                ForEach(PlayerType.allCases, id: \.rawValue) { option in
+                    Text(option.rawValue)
+                        .tag(option)
+                }
             }
-            .pickerStyle(.inline)
+            .onChange(of: viewModel.selectedPlayer) { _ in
+                viewModel.changePlayer()
+                viewModel.calc()
+            }
+            .pickerStyle(.menu)
             Text("The player was: ===PICKER===")
-            Picker("Calculators", selection: $page) {
-                Text("Invasion").tag(0)
-                Text("Summon range").tag(1)
+            Picker("Calculators", selection: $viewModel.selectedEnemy) {
+                ForEach(viewModel.selectionEnemyArray, id: \.self) { option in
+                    Text(option.rawValue)
+                        .tag(option)
+                }
             }
-            .pickerStyle(.wheel)
+            .onChange(of: viewModel.selectedEnemy) { _ in    viewModel.calc()  }
+            .pickerStyle(.menu)
             Text("The player's rune level was: \(viewModel.resultText)")
             Text("For current level: \(viewModel.currentText) above: \(viewModel.aboveText)")
             Spacer()

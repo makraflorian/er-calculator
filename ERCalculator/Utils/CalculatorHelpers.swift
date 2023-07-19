@@ -41,11 +41,90 @@ func runesForLevel(guess: Double) -> Double {
     
     let guess_rounded = floor(guess)
     
-    let helper_cubic = (0.02 * pow(guess_rounded, 3))
-    let helper_quadratic = (3.06 * pow(guess_rounded, 2))
-    let helper_basic = (105.6 * guess_rounded)
+    let coefficents = guess_rounded >= 13.0 ? Coefficents.high : Coefficents.low
     
-    let runes = floor(helper_cubic + helper_quadratic + helper_basic - 895)
+    let helper_cubic = (coefficents.a * pow(guess_rounded, 3))
+    let helper_quadratic = (coefficents.b * pow(guess_rounded, 2))
+    let helper_basic = (coefficents.c * guess_rounded)
+    
+    let runes = floor(helper_cubic + helper_quadratic + helper_basic + coefficents.d)
     
     return runes
+}
+
+func getLevel(number: Decimal, multiplier: Double) -> Double {
+    
+    /// Get the last level up rune amount
+    let runes_got = NSDecimalNumber(decimal: number).doubleValue
+    let runes = runes_got / multiplier
+    print("RUNES = \(runes)")
+    
+    /// Decide if low level or high level coefficents
+    let coefficents = runes >= 1038 ? Coefficents.high : Coefficents.low
+    
+    /// Get the rough level value based on the more precise DS3 formula
+    let guess = cubicSolve(a: coefficents.a, b: coefficents == .high ? coefficents.b - 0.01 : coefficents.b, c: coefficents.c, d: coefficents.d - runes)
+    print("GUESS = \(guess)")
+//        let res1 = cubicSolve(a: 0.02, b: 3.12, c: 111.78, d: -786.32 - runes) // ER formula
+//        print("RES1 = \(res1)")
+    
+    /// Calculate the required runes for the guessed level and corrects the result based on this checks
+    let helper_current = floor(runesForLevel(guess: guess) * multiplier)
+    let helper_above = floor(runesForLevel(guess: guess + 1.0) * multiplier)
+    print("CURRENT = \(helper_current)")
+    if helper_current > floor(runes_got) {
+        return guess - 1.0
+    } else if helper_above <= floor(runes_got){
+        return guess + 1.0
+    } else {
+        return guess
+    }
+}
+
+func getPercent(player: PlayerType, enemy: PlayerType) -> Double {
+    
+    /// i hate it xd
+    switch player {
+    case .invader:
+        switch enemy {
+        case .host, .furledFinger, .hunter:
+            return 0.04
+        case .invader, .duelist:
+            return 0.01
+        }
+    case .host:
+        switch enemy {
+        case .invader:
+            return 0.15
+        case .duelist:
+            return 0.02
+        default:
+            return 0.0
+        }
+    case .furledFinger:
+        switch enemy {
+        case .invader:
+            return 0.15
+        case .duelist:
+            return 0.01
+        default:
+            return 0.0
+        }
+    case .hunter:
+        switch enemy {
+        case .invader:
+            return 0.05
+        case .duelist:
+            return 0.01
+        default:
+            return 0.0
+        }
+    case .duelist:
+        switch enemy {
+        case .host, .furledFinger, .invader, .duelist:
+            return 0.01
+        default:
+            return 0.0
+        }
+    }
 }
