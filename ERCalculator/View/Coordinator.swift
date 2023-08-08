@@ -62,15 +62,32 @@ class Coordinator: ObservableObject {
         return leftView
     }
     
-    func constructBuild() -> some View {
-        let viewModel = MiddleViewModel()
-        let middleView = MiddleView(viewModel: viewModel).environmentObject(self)
-        return middleView
+//    func constructBuild() -> some View {
+//        let viewModel = MiddleViewModel()
+//        let middleView = MiddleView(viewModel: viewModel).environmentObject(self)
+//        return middleView
+//    }
+    func constructCalculators() -> some View {
+        let viewModel = CalculatorsViewModel()
+        let calculatorsView = CalculatorsView(viewModel: viewModel).environmentObject(self)
+        return calculatorsView
     }
     
     func constructCalculator() -> some View {
         let viewModel = RuneCalculatorViewModel()
         let calcView = RuneCalculatorView(viewModel: viewModel).environmentObject(self)
         return calcView
+    }
+    
+    func constructSummonRange() -> some View {
+        let viewModel = SummonRangeViewModel()
+        let summonRangeView = SummonRangeView(viewModel: viewModel).environmentObject(self)
+        return summonRangeView
+    }
+    
+    func constructSummonRangeDetail(withRanges ranges: [MultiplayerRanges]) -> SummonRangeDetailView {
+        let viewModel = SummonRangeDetailViewModel(ranges: ranges)
+        let detailView = SummonRangeDetailView(viewModel: viewModel)
+        return detailView
     }
 }

@@ -27,10 +27,11 @@ struct BubbleTabView: View {
                         .tag(Tab.heart)
                     
                     Frog()
+//                    SummonRangeView(viewModel: SummonRangeViewModel())
                         .ignoresSafeArea(.all, edges: .all)
                         .tag(Tab.moon)
                     
-                    coordinator.constructCalculator()
+                    coordinator.constructCalculators()
                     // .ignoresSafeArea(.all, edges: .all)
                         .tag(Tab.pawprint)
                 }
