@@ -12,7 +12,7 @@ struct ERCalculatorApp: App {
     @StateObject private var coordinator = Coordinator()
     var body: some Scene {
         WindowGroup {
-            BubbleTabView().environmentObject(coordinator)
+            BubbleTabView().environmentObject(coordinator).ignoresSafeArea(.keyboard)
         }
     }
 }
