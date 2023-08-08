@@ -83,48 +83,21 @@ func getLevel(number: Decimal, multiplier: Double) -> Double {
 
 func getPercent(player: PlayerType, enemy: PlayerType) -> Double {
     
-    /// i hate it xd
-    switch player {
-    case .invader:
-        switch enemy {
-        case .host, .furledFinger, .hunter:
-            return 0.04
-        case .invader, .duelist:
-            return 0.01
-        }
-    case .host:
-        switch enemy {
-        case .invader:
-            return 0.15
-        case .duelist:
-            return 0.02
-        default:
-            return 0.0
-        }
-    case .furledFinger:
-        switch enemy {
-        case .invader:
-            return 0.15
-        case .duelist:
-            return 0.01
-        default:
-            return 0.0
-        }
-    case .hunter:
-        switch enemy {
-        case .invader:
-            return 0.05
-        case .duelist:
-            return 0.01
-        default:
-            return 0.0
-        }
-    case .duelist:
-        switch enemy {
-        case .host, .furledFinger, .invader, .duelist:
-            return 0.01
-        default:
-            return 0.0
-        }
+    switch (player, enemy) {
+    case (.invader, let other) where [.host, .furledFinger, .hunter].contains(other):
+        return 0.04
+    case (.host, .invader):
+        return 0.15
+    case (.host, .duelist):
+        return 0.02
+    case (_, .duelist):
+        return 0.01
+    case (let other, .invader) where [.furledFinger, .hunter].contains(other):
+        return 0.05
+    case (.duelist, _):
+        return 0.01
+    case (_, _):
+        return 0.0
     }
+
 }

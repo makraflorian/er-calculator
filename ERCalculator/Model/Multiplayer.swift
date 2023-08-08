@@ -21,3 +21,18 @@ enum PlayerType: String, Identifiable, CaseIterable {
     static let friendly: [PlayerType] = [.host, .furledFinger, .hunter]
     static let enemy: [PlayerType] = [.invader, .duelist]
 }
+
+struct MultiplayerRanges: Identifiable {
+    
+    var id: String { name }
+    let name: String
+    let ranges: [LevelRange]
+}
+
+struct LevelRange: Identifiable {
+    
+    var id: String { name }
+    let name: String
+    let minLevel: Int
+    let maxLevel: Int
+}
