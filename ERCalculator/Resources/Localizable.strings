@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ERCalculator
+
+  Created by Makra Flórián Róbert on 2023. 07. 31..
+  
+*/
+
+"canSummon"="Can Summon";
+"canInvade"="Can Invade";
+"canBeSummonedBy"="Can be Summoned by";
+"canBeInvadedBy"="Can be Invaded by";
+"regularWeapon"="Regular Weapon";
+"somberWeapon"="Somber Weapon";
+"coopRanges"="COOP Ranges";
+"pvpRanges"="PVP Ranges";
+"weaponRanges"="Weapon Ranges";
