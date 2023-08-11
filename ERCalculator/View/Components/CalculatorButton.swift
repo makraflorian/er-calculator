@@ -15,7 +15,7 @@ struct CalculatorButton: View {
     var body: some View {
         Button(buttonType.description, action: action)
             .buttonStyle(CalculatorButtonStyle(
-                size: 80,
+                size: 70,
                 backgroundColor: buttonType.backgroundColor,
                 foregroundColor: buttonType.foregroundColor,
                 isWide: buttonType == .digit(.zero)))
@@ -38,8 +38,10 @@ struct CalculatorButtonStyle: ButtonStyle {
             .background(backgroundColor)
             .foregroundColor(foregroundColor)
             .overlay {
+                Capsule()
+                    .stroke(Color.iconColor.opacity(0.7), lineWidth: 3)
                 if configuration.isPressed {
-                    Color(white: 1.0, opacity: 0.2)
+                    Color.textColor.opacity(0.2)
                 }
             }
             .clipShape(Capsule())

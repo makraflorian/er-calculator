@@ -24,9 +24,9 @@ enum ButtonType: Hashable, CustomStringConvertible {
     var backgroundColor: Color {
         switch self {
         case .delete:
-            return Color(.orange)
+            return Color.iconColor
         case .digit:
-            return .secondary
+            return Color.iconColor.opacity(0.01)
         }
     }
     
@@ -35,7 +35,7 @@ enum ButtonType: Hashable, CustomStringConvertible {
         case .delete:
             return .black
         default:
-            return .white
+            return Color.textColor
         }
     }
 }

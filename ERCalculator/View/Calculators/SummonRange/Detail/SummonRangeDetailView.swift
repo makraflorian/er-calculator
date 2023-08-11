@@ -32,6 +32,7 @@ struct RangesView: View {
             Text(title)
                 .font(.title)
                 .bold()
+                .foregroundColor(Color.textColor)
             ForEach(levelRanges) { range in
                 RangeCardView(range: range)
             }
@@ -50,20 +51,32 @@ struct RangeCardView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 75, height: 75)
+            //                .clipShape(Circle())
+                .overlay {
+                    Circle().stroke(Color.iconColor, lineWidth: 2)
+                    
+                }
                 .padding(20)
                 .foregroundColor(.teal)
             VStack(alignment: .leading) {
                 Text(range.name.localized)
+                    .foregroundColor(Color.textColor)
                 HStack {
                     Text("\(range.minLevel)")
+                        .foregroundColor(Color.textColor)
                     Text("\(range.maxLevel)")
+                        .foregroundColor(Color.textColor)
                 }
             }
             .padding(.trailing, 20)
             Spacer()
         }
+        .overlay {
+            RoundedRectangle(cornerRadius: 20).stroke(Color.iconColor, lineWidth: 2)
+            
+        }
         .frame(maxWidth: .infinity, alignment: .center)
-        .background(Color.gray)
+//        .background(Color.gray)
         .cornerRadius(20)
         .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)
         .padding(10)
