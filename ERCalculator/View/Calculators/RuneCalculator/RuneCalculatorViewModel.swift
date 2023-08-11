@@ -17,6 +17,8 @@ class RuneCalculatorViewModel: ObservableObject {
     @Published var currentText: String = "0"
     @Published var aboveText: String = "0"
     
+    @Published var resultLevel: Int = 0
+    
     @Published var selectedPlayer = PlayerType.invader
     @Published var selectedEnemy = (PlayerType.friendly + PlayerType.enemy)[1]
     @Published var selectionEnemyArray = PlayerType.friendly + PlayerType.enemy
@@ -68,6 +70,8 @@ class RuneCalculatorViewModel: ObservableObject {
         var result = getLevel(number: number ?? 0.0, multiplier: multiplier)
         
         if result < 1.0 { result = 1.0 }
+        
+        resultLevel = Int(floor(result))
         
         /// Calculate the helpers (under and above levels rune requirement)
         let current_souls = runesForLevel(guess: result) * multiplier

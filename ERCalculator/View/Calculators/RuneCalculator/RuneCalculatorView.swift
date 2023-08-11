@@ -13,35 +13,37 @@ struct RuneCalculatorView: View {
     
     var body: some View {
         VStack {
-            Text("You are a: ===PICKER===")
-            Picker("Calculators", selection: $viewModel.selectedPlayer) {
-                ForEach(PlayerType.allCases, id: \.rawValue) { option in
-                    Text(option.rawValue)
-                        .tag(option)
-                }
+            Text("runeLevelCalculator".localized)
+                .font(.title2)
+                .padding(.bottom, 10)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            ERModalPicker(selectedItem: $viewModel.selectedPlayer, allItems: PlayerType.allCases, title: "You are a:")
+                .onChange(of: viewModel.selectedPlayer) { _ in
+                    viewModel.changePlayer()
+                    viewModel.calc()
+                }.padding(.bottom, 10)
+            ERModalPicker(selectedItem: $viewModel.selectedEnemy, allItems: viewModel.selectionEnemyArray, title: "The other player was a: ")
+                .onChange(of: viewModel.selectedEnemy) { _ in    viewModel.calc()  }
+            HStack {
+                Text("The player's Rune Level was:")
+                    .foregroundColor(Color.textColor)
+                    .font(.title2)
+                Text(viewModel.resultText)
+                    .foregroundColor(Color.iconColor)
+                    .font(.title)
             }
-            .onChange(of: viewModel.selectedPlayer) { _ in
-                viewModel.changePlayer()
-                viewModel.calc()
-            }
-            .pickerStyle(.menu)
-            Text("The player was: ===PICKER===")
-            Picker("Calculators", selection: $viewModel.selectedEnemy) {
-                ForEach(viewModel.selectionEnemyArray, id: \.self) { option in
-                    Text(option.rawValue)
-                        .tag(option)
-                }
-            }
-            .onChange(of: viewModel.selectedEnemy) { _ in    viewModel.calc()  }
-            .pickerStyle(.menu)
-            Text("The player's rune level was: \(viewModel.resultText)")
-            Text("For current level: \(viewModel.currentText) above: \(viewModel.aboveText)")
+            Text("Level \(viewModel.resultLevel) drops: \(viewModel.currentText), and \(viewModel.resultLevel+1) drops: \(viewModel.aboveText) runes")
+                .foregroundColor(Color.textColor.opacity(0.7))
+                .font(.callout)
             Spacer()
+            Divider()
+                .overlay(Color.iconColor)
             NumberField(viewModel: viewModel)
             ButtonPad(viewModel: viewModel).padding(.bottom, 90)
         }
         .padding(12.0)
-        .background(.gray)
+        .background(LinearGradient(gradient: Gradient(colors: [.mainGradientDarker, .mainGradientLighter]), startPoint: .top, endPoint: .bottom)
+        )
     }
     
     // MARK: - COMPONENTS
@@ -53,7 +55,7 @@ struct RuneCalculatorView: View {
         var body: some View {
             Text(viewModel.displayText)
                 .padding(6)
-                .foregroundColor(.white)
+                .foregroundColor(Color.iconColor)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .font(.system(size: 80, weight: .light))
                 .lineLimit(1)
@@ -76,7 +78,7 @@ struct RuneCalculatorView: View {
                                                 .onEnded { _ in
                                                     viewModel.clearAll(buttonType: buttonType)
                                                 }
-                                            )
+                                             )
                         }
                     }
                 }
