@@ -14,7 +14,7 @@ struct CalculatorsView: View {
     var body: some View {
         VStack {
             Picker(selection: $viewModel.page, label: Text("")) {
-                Text("Invasion").tag(0)
+                Text("Rune Level").tag(0)
                 Text("Summon Range").tag(1)
 
             }.pickerStyle(.segmented)

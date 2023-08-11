@@ -96,6 +96,8 @@ func getPercent(player: PlayerType, enemy: PlayerType) -> Double {
         return 0.05
     case (.duelist, _):
         return 0.01
+    case (.invader, .invader):
+        return 0.01
     case (_, _):
         return 0.0
     }

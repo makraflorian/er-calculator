@@ -15,3 +15,7 @@
 "coopRanges"="COOP Ranges";
 "pvpRanges"="PVP Ranges";
 "weaponRanges"="Weapon Ranges";
+"runeLevel"="Rune Level";
+"weaponLevel"="Weapon Level";
+"summonRangeCalculator"="Summon Range Calculator";
+"runeLevelCalculator"="Rune Level Calculator";
