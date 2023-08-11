@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D70A63B92A653D2C00D1E144 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A63B82A653D2C00D1E144 /* Constants.swift */; };
+		D7118AAA2A82872500192247 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118AA92A82872500192247 /* ColorExtension.swift */; };
+		D7118AAE2A829B4600192247 /* ERModalPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7118AAD2A829B4600192247 /* ERModalPicker.swift */; };
 		D724FAEE2A7025E800FE5C02 /* SummonRangeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724FAED2A7025E800FE5C02 /* SummonRangeDetailView.swift */; };
 		D724FAF02A7025FC00FE5C02 /* SummonRangeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D724FAEF2A7025FC00FE5C02 /* SummonRangeDetailViewModel.swift */; };
 		D74189BA2A6EB11D0001BA10 /* SummonRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74189B92A6EB11D0001BA10 /* SummonRangeView.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		D70A63B82A653D2C00D1E144 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D7118AA92A82872500192247 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		D7118AAD2A829B4600192247 /* ERModalPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERModalPicker.swift; sourceTree = "<group>"; };
 		D724FAED2A7025E800FE5C02 /* SummonRangeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonRangeDetailView.swift; sourceTree = "<group>"; };
 		D724FAEF2A7025FC00FE5C02 /* SummonRangeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonRangeDetailViewModel.swift; sourceTree = "<group>"; };
 		D74189B92A6EB11D0001BA10 /* SummonRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummonRangeView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 			children = (
 				D74AC5F22A5F0E84009C12D7 /* StringExtension.swift */,
 				D7CE9F2A2A813FF400D4E842 /* ViewExtension.swift */,
+				D7118AA92A82872500192247 /* ColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 			children = (
 				D7FC722B2A4F086B00A594D5 /* CalculatorButton.swift */,
 				D7CE9F282A8113F700D4E842 /* ERTextField.swift */,
+				D7118AAD2A829B4600192247 /* ERModalPicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -307,7 +313,9 @@
 				D7FC72272A4EF59900A594D5 /* CalculatorButtonType.swift in Sources */,
 				D7CE9F292A8113F700D4E842 /* ERTextField.swift in Sources */,
 				D7E4148E2A52B628004A5817 /* RuneCalculatorViewModel.swift in Sources */,
+				D7118AAA2A82872500192247 /* ColorExtension.swift in Sources */,
 				D7E4149A2A53006E004A5817 /* Coordinator.swift in Sources */,
+				D7118AAE2A829B4600192247 /* ERModalPicker.swift in Sources */,
 				D7E414932A52B67E004A5817 /* CalculatorsViewModel.swift in Sources */,
 				D7CE9F2B2A813FF400D4E842 /* ViewExtension.swift in Sources */,
 				D74AC5F32A5F0E84009C12D7 /* StringExtension.swift in Sources */,
