@@ -14,13 +14,15 @@ struct SummonRangeView: View {
     @State var presentSheet = false
     
     var body: some View {
-        
-        
         VStack {
-            Text("Summon Range Calculator")
-            TextField("Rune Level", text: $viewModel.inputRuneLevel)
+            Text("summonRangeCalculator".localized)
+                .font(.title2)
+                .padding(.bottom, 20)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            ERTextField(title: "runeLevel".localized, inputData: $viewModel.inputRuneLevel)
                 .keyboardType(.numberPad)
-            TextField("Weapon Level", text: $viewModel.inputWeaponLevel)
+                .padding(.bottom, 20)
+            ERTextField(title: "runeLevel".localized, inputData: $viewModel.inputWeaponLevel)
                 .keyboardType(.numberPad)
             Toggle(isOn: $viewModel.isSomber) {
                 Text("isSomber")
@@ -34,8 +36,11 @@ struct SummonRangeView: View {
                     .presentationDetents([.large])
                     .presentationDragIndicator(.visible)
             }
+            Spacer()
         }
-        .background(Color.gray)
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.mainColor)
         .onTapGesture {
             self.endTextEditing()
         }
@@ -46,6 +51,6 @@ struct SummonRangeView: View {
 
 struct SummonRangeView_Previews: PreviewProvider {
     static var previews: some View {
-        SummonRangeView(viewModel: SummonRangeViewModel())
+        SummonRangeView(viewModel: SummonRangeViewModel()).environmentObject(Coordinator())
     }
 }
