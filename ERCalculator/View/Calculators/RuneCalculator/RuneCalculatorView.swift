@@ -14,6 +14,7 @@ struct RuneCalculatorView: View {
     var body: some View {
         VStack {
             Text("runeLevelCalculator".localized)
+//                .padding(.top, 90)
                 .font(.title2)
                 .padding(.bottom, 10)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -73,8 +74,13 @@ struct RuneCalculatorView: View {
                     HStack(spacing: 10.0) {
                         ForEach(row, id: \.self) { buttonType in
                             CalculatorButton(action: {
-                                viewModel.performAction(for: buttonType)},
-                                             buttonType: buttonType)    .simultaneousGesture(LongPressGesture()
+                                viewModel.performAction(for: buttonType)
+                                let hapticImpact = UIImpactFeedbackGenerator(style: .soft)
+                                hapticImpact.impactOccurred()
+                            },
+                                             buttonType: buttonType)
+//                            .simultaneousGesture(DragGesture())
+                            .simultaneousGesture(LongPressGesture()
                                                 .onEnded { _ in
                                                     viewModel.clearAll(buttonType: buttonType)
                                                 }

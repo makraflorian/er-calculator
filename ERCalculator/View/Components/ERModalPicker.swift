@@ -43,6 +43,8 @@ struct ERModalPicker: View {
                             ERRadioButton(item: option.rawValue, selected: selectedItem == option)
                                 .tag(option)
                                 .onTapGesture {
+                                    let hapticImpact = UIImpactFeedbackGenerator(style: .light)
+                                    hapticImpact.impactOccurred()
                                     selectedItem = option
                                     /// questionmark and i hate it
                                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
