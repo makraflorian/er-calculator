@@ -7,6 +7,15 @@
 
 import Foundation
 
+enum Tab2: String, Identifiable, CaseIterable {
+    case invasion
+    case runeLevel
+    
+    var id: String {
+        self.rawValue
+    }
+}
+
 struct Coefficents: Equatable {
     
     let a: Double
@@ -38,6 +47,8 @@ struct Constants {
     static let maxRuneLevel: Int = 713
     static let lowRuneLevelBorder: Int = 13
     static let lowLevelBorderRunes: Int = 1038
+    
+    static let segmentedTabs: [TabSelectionValueType] = [TabSelectionValueType(tabName: "one", tabImage: "hearth"), TabSelectionValueType(tabName: "two", tabImage: "pawprint")]
     
     /// key: [minRegular, maxRegular, minUnique, maxunique]
     static let weaponRegularRangeTable = [
