@@ -18,13 +18,26 @@ struct CalculatorsView: View {
                 Text("Summon Range").tag(1)
 
             }.pickerStyle(.segmented)
-            
+
             TabView(selection: $viewModel.page,
                     content:  {
                 coordinator.constructCalculator().tag(0)
                 coordinator.constructSummonRange().tag(1)
                     })
+            .tabViewStyle(.page(indexDisplayMode: .always))
         }
+//            BubbleSegmentedControl(selectedTab: $viewModel.page, allTabs: Constants.segmentedTabs) {
+//                TabView(selection: $viewModel.page) {
+//                    coordinator.constructCalculator()
+//                        .ignoresSafeArea(.all, edges: .all)
+//                        .tag(Constants.segmentedTabs[0])
+//
+//                    coordinator.constructSummonRange()
+//                        .ignoresSafeArea(.all, edges: .all)
+//                        .tag(Constants.segmentedTabs[1])
+//                }
+//        }
+//        .ignoresSafeArea(.all, edges: .top)
     }
 }
 

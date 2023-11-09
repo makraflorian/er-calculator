@@ -22,7 +22,7 @@ struct SummonRangeView: View {
             ERTextField(title: "runeLevel".localized, inputData: $viewModel.inputRuneLevel)
                 .keyboardType(.numberPad)
                 .padding(.bottom, 20)
-            ERTextField(title: "runeLevel".localized, inputData: $viewModel.inputWeaponLevel)
+            ERTextField(title: "weaponLevel".localized, inputData: $viewModel.inputWeaponLevel)
                 .keyboardType(.numberPad)
             Toggle(isOn: $viewModel.isSomber) {
                 Text("isSomber")
@@ -36,6 +36,7 @@ struct SummonRangeView: View {
                     .presentationDetents([.large])
                     .presentationDragIndicator(.visible)
             }
+            .disabled(viewModel.inputRuneLevel.isEmpty && viewModel.inputWeaponLevel.isEmpty)
             Spacer()
         }
         .padding()

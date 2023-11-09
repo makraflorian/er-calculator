@@ -10,5 +10,6 @@ import Foundation
 class CalculatorsViewModel: ObservableObject {
     
     @Published var page = 0
+//    @Published var page = Constants.segmentedTabs[0]
 
 }

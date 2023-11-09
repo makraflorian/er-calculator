@@ -47,7 +47,7 @@ struct RangeCardView: View {
     
     var body: some View {
         HStack(alignment: .center) {
-            Image(systemName: "xbox.logo")
+            Image(range.name)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 75, height: 75)

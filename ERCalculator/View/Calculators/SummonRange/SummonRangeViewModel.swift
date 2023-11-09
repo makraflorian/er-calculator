@@ -45,12 +45,15 @@ class SummonRangeViewModel: ObservableObject {
         
         if !inputWeaponLevel.isEmpty {
             let weaponLevelData = getWeaponMinMax()
-            let regularWeapon = LevelRange(name: "regularWeapon", minLevel: weaponLevelData[0], maxLevel: weaponLevelData[1])
-            let somberWeapon = LevelRange(name: "somberWeapon", minLevel: weaponLevelData[2], maxLevel: weaponLevelData[3])
-            
-            let weaponRanges = MultiplayerRanges(name: "weaponRanges", ranges: [regularWeapon, somberWeapon])
-            
-            rangesByType.append(weaponRanges)
+            /// dont like it, just a quick fix (maybe combine??)
+            if !weaponLevelData.isEmpty {
+                let regularWeapon = LevelRange(name: "regularWeapon", minLevel: weaponLevelData[0], maxLevel: weaponLevelData[1])
+                let somberWeapon = LevelRange(name: "somberWeapon", minLevel: weaponLevelData[2], maxLevel: weaponLevelData[3])
+                
+                let weaponRanges = MultiplayerRanges(name: "weaponRanges", ranges: [regularWeapon, somberWeapon])
+                
+                rangesByType.append(weaponRanges)
+            }
         }
 
     }
@@ -58,7 +61,7 @@ class SummonRangeViewModel: ObservableObject {
     func getLevelMinMax(coefficents: SummonRangeCoefficents) -> (Int, Int) {
         let result = Int(floor((runeLevel ?? 0.0) * coefficents.a + coefficents.b))
         let resultReverse = Int(ceil(((runeLevel ?? 0.0) + coefficents.reverseB) / coefficents.reverseA))
-        return (result, resultReverse)
+        return (result > 0 ? result : 1, resultReverse > 0 ? resultReverse : 1) /// temp
     }
     
     func getWeaponMinMax() -> [Int] {
