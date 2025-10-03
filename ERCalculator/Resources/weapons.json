@@ -1,0 +1,18 @@
+[
+  {
+    "weaponId": 1000000,
+    "name": "Dagger",
+    "affinityId": 1
+  },
+  
+  {
+    "weaponId": 1010000,
+    "name": "Black Knife",
+    "affinityId": 2
+  },
+  {
+    "weaponId": 1020000,
+    "name": "Parrying Dagger",
+    "affinityId": 3
+  }
+]

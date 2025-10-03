@@ -22,6 +22,10 @@
 		D773B7732A4DC9A8007C0FF2 /* ERCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773B7722A4DC9A8007C0FF2 /* ERCalculatorApp.swift */; };
 		D773B7772A4DC9AA007C0FF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D773B7762A4DC9AA007C0FF2 /* Assets.xcassets */; };
 		D773B77A2A4DC9AA007C0FF2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D773B7792A4DC9AA007C0FF2 /* Preview Assets.xcassets */; };
+		D781BBD12BD681BF00B1A66E /* users.json in Sources */ = {isa = PBXBuildFile; fileRef = D781BBD02BD681BF00B1A66E /* users.json */; };
+		D781BBD22BD682F700B1A66E /* users.json in Resources */ = {isa = PBXBuildFile; fileRef = D781BBD02BD681BF00B1A66E /* users.json */; };
+		D781BBD62BD69B9D00B1A66E /* weapons.json in Resources */ = {isa = PBXBuildFile; fileRef = D781BBD52BD69B9D00B1A66E /* weapons.json */; };
+		D781BBD82BD69C3B00B1A66E /* weapon.store in Resources */ = {isa = PBXBuildFile; fileRef = D781BBD72BD69C3B00B1A66E /* weapon.store */; };
 		D790BF712AAF4CBA00FA9C39 /* BubbleSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D790BF702AAF4CBA00FA9C39 /* BubbleSegmentedControl.swift */; };
 		D79769E32A546CD700155751 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79769E22A546CD700155751 /* Cat.swift */; };
 		D79769E52A546CED00155751 /* Frog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79769E42A546CED00155751 /* Frog.swift */; };
@@ -35,6 +39,7 @@
 		D7E414962A52B6B9004A5817 /* LeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E414952A52B6B9004A5817 /* LeftViewModel.swift */; };
 		D7E414982A52B6C8004A5817 /* LeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E414972A52B6C8004A5817 /* LeftView.swift */; };
 		D7E4149A2A53006E004A5817 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E414992A53006E004A5817 /* Coordinator.swift */; };
+		D7EC20AC2BDA90A400F220C4 /* weaponAffinities.json in Resources */ = {isa = PBXBuildFile; fileRef = D7EC20AB2BDA90A400F220C4 /* weaponAffinities.json */; };
 		D7F3C51F2A56C45F008229F6 /* BubbleTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F3C51E2A56C45F008229F6 /* BubbleTabViewModel.swift */; };
 		D7FC72252A4EF24800A594D5 /* RuneCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FC72242A4EF24800A594D5 /* RuneCalculatorView.swift */; };
 		D7FC72272A4EF59900A594D5 /* CalculatorButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FC72262A4EF59900A594D5 /* CalculatorButtonType.swift */; };
@@ -58,6 +63,9 @@
 		D773B7722A4DC9A8007C0FF2 /* ERCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERCalculatorApp.swift; sourceTree = "<group>"; };
 		D773B7762A4DC9AA007C0FF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D773B7792A4DC9AA007C0FF2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D781BBD02BD681BF00B1A66E /* users.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = users.json; sourceTree = "<group>"; };
+		D781BBD52BD69B9D00B1A66E /* weapons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weapons.json; sourceTree = "<group>"; };
+		D781BBD72BD69C3B00B1A66E /* weapon.store */ = {isa = PBXFileReference; lastKnownFileType = file; path = weapon.store; sourceTree = "<group>"; };
 		D790BF702AAF4CBA00FA9C39 /* BubbleSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSegmentedControl.swift; sourceTree = "<group>"; };
 		D79769E22A546CD700155751 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		D79769E42A546CED00155751 /* Frog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Frog.swift; sourceTree = "<group>"; };
@@ -71,6 +79,7 @@
 		D7E414952A52B6B9004A5817 /* LeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewModel.swift; sourceTree = "<group>"; };
 		D7E414972A52B6C8004A5817 /* LeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftView.swift; sourceTree = "<group>"; };
 		D7E414992A53006E004A5817 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D7EC20AB2BDA90A400F220C4 /* weaponAffinities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weaponAffinities.json; sourceTree = "<group>"; };
 		D7F3C51E2A56C45F008229F6 /* BubbleTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTabViewModel.swift; sourceTree = "<group>"; };
 		D7FC72242A4EF24800A594D5 /* RuneCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuneCalculatorView.swift; sourceTree = "<group>"; };
 		D7FC72262A4EF59900A594D5 /* CalculatorButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonType.swift; sourceTree = "<group>"; };
@@ -110,8 +119,12 @@
 		D74AC5F02A5F0DBC009C12D7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D7EC20AB2BDA90A400F220C4 /* weaponAffinities.json */,
+				D781BBD72BD69C3B00B1A66E /* weapon.store */,
+				D781BBD52BD69B9D00B1A66E /* weapons.json */,
 				D773B7762A4DC9AA007C0FF2 /* Assets.xcassets */,
 				D74217E32A77EFC30034BC41 /* Localizable.strings */,
+				D781BBD02BD681BF00B1A66E /* users.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -305,7 +318,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D781BBD22BD682F700B1A66E /* users.json in Resources */,
+				D781BBD62BD69B9D00B1A66E /* weapons.json in Resources */,
 				D773B77A2A4DC9AA007C0FF2 /* Preview Assets.xcassets in Resources */,
+				D7EC20AC2BDA90A400F220C4 /* weaponAffinities.json in Resources */,
+				D781BBD82BD69C3B00B1A66E /* weapon.store in Resources */,
 				D74217E42A77EFC30034BC41 /* Localizable.strings in Resources */,
 				D773B7772A4DC9AA007C0FF2 /* Assets.xcassets in Resources */,
 			);
@@ -334,6 +351,7 @@
 				D724FAF02A7025FC00FE5C02 /* SummonRangeDetailViewModel.swift in Sources */,
 				D7E414912A52B66D004A5817 /* CalculatorsView.swift in Sources */,
 				D7A1D1FF2A60240600F03E73 /* Multiplayer.swift in Sources */,
+				D781BBD12BD681BF00B1A66E /* users.json in Sources */,
 				D79E2E112A583D6C00520EA9 /* CalculatorHelpers.swift in Sources */,
 				D7F3C51F2A56C45F008229F6 /* BubbleTabViewModel.swift in Sources */,
 				D748DD892AF91F8600AF5DCF /* Shapes.swift in Sources */,
@@ -484,6 +502,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -515,6 +534,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
